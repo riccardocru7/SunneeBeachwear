@@ -13,7 +13,6 @@ Un sistema TypeScript per gestire prodotti, clienti e processi produttivi sosten
 
 ## Installazione
 1. Clona il repository:
-   ```bash
    git clone <url-repository>
    cd gestione-produzione-ordini
 2. Installa TypeScript:
