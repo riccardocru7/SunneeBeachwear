@@ -1,4 +1,4 @@
-// Definizione delle interfacce
+
 interface IProdotto {
     tipo: string; // costume da bagno, pareo, cappello
     id: string; // ID univoco
@@ -23,7 +23,7 @@ interface IProcessoProduzione {
     aggiungiProdotto(prodotto: IProdotto): void;
 }
 
-// Implementazione delle classi
+
 class Prodotto implements IProdotto {
     tipo: string;
     id: string;
@@ -85,7 +85,7 @@ class ProcessoProduzione implements IProcessoProduzione {
     }
 }
 
-// Funzione di output
+
 function logOutput(message: string): void {
     const outputConsole = document.getElementById("outputConsole") as HTMLPreElement;
     if (outputConsole) {
@@ -93,7 +93,7 @@ function logOutput(message: string): void {
     }
 }
 
-// Istanziazione di oggetti
+
 const costumeRelax = new Prodotto("costume da bagno", "001", "M", "blu", "disponibile");
 const pareoElegante = new Prodotto("pareo", "002", "unica", "rosso", "disponibile");
 const cappelloSolare = new Prodotto("cappello", "003", "unica", "giallo", "disponibile");
@@ -105,7 +105,7 @@ const cliente4 = new Cliente("Giulia", "Neri", "giulia.neri@example.com", "carta
 
 const processoSostenibile = new ProcessoProduzione("Riciclo Reti da Pesca", "Trasforma reti da pesca in filati per costumi.");
 
-// Listener dei pulsanti
+
 document.getElementById("aggiungiProdotto")?.addEventListener("click", () => {
     processoSostenibile.aggiungiProdotto(costumeRelax);
     processoSostenibile.aggiungiProdotto(pareoElegante);
@@ -132,7 +132,7 @@ document.getElementById("ordinaProdotto4")?.addEventListener("click", () => { //
 document.getElementById("mostraProdotti")?.addEventListener("click", () => {
     logOutput("Prodotti in produzione:");
 
-    // Verifica se ci sono prodotti in produzione
+    
     if (processoSostenibile.prodottiInProduzione.length > 0) {
         // Scorre attraverso l'elenco dei prodotti in produzione e li visualizza
         processoSostenibile.prodottiInProduzione.forEach(prodotto => {
