@@ -1,6 +1,6 @@
 # Gestione Produzione e Ordini
 
-Un sistema TypeScript per gestire prodotti, clienti e processi produttivi sostenibili. I clienti possono ordinare prodotti, che vengono aggiunti e monitorati nei processi di produzione.
+E' un sistema TypeScript per gestire prodotti, clienti e processi produttivi sostenibili. I clienti possono ordinare prodotti, che vengono aggiunti e monitorati nei processi di produzione.
 
 ## Funzionalità principali
 - **Prodotti**: Creazione e gestione di articoli come costumi, parei e cappelli.
