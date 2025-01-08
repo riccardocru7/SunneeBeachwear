@@ -1,4 +1,4 @@
-// Definizione delle interfacce
+
 
 interface IProdotto {
   tipo: string; // costume da bagno, pareo, cappello
@@ -24,7 +24,7 @@ interface IProcessoProduzione {
   aggiungiProdotto(prodotto: IProdotto): void;
 }
 
-// Implementazione delle classi
+
 
 class Prodotto implements IProdotto {
   tipo: string;
@@ -87,25 +87,25 @@ class ProcessoProduzione implements IProcessoProduzione {
   }
 }
 
-// Esempio di utilizzo
 
-// Creazione di alcuni prodotti
+
+
 const costumeRelax = new Prodotto("costume da bagno", "001", "M", "blu", "disponibile");
 const pareoElegante = new Prodotto("pareo", "002", "unica", "rosso", "disponibile");
 const cappelloSolare = new Prodotto("cappello", "003", "unica", "giallo", "disponibile");
 
-// Creazione di clienti
+
 const cliente1 = new Cliente("Luca", "Rossi", "luca.rossi@example.com", "carta di credito");
 const cliente2 = new Cliente("Maria", "Verdi", "maria.verdi@example.com", "paypal");
 
-// Creazione di un processo di produzione
+
 const processoSostenibile = new ProcessoProduzione("Riciclo Reti da Pesca", "Trasforma reti da pesca in filati per costumi.");
 
-// Aggiunta di prodotti al processo di produzione
+
 processoSostenibile.aggiungiProdotto(costumeRelax);
 processoSostenibile.aggiungiProdotto(pareoElegante);
 
-// Interattività tramite DOM
+
 const container = document.createElement("div");
 document.body.appendChild(container);
 
