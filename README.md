@@ -12,14 +12,13 @@ E' un sistema TypeScript per gestire prodotti, clienti e processi produttivi sos
 - Browser moderno
 
 ## Installazione
-1. Clona il repository:
-   git clone <url-repository>
-   cd gestione-produzione-ordini
-2. Installa TypeScript:
-   npm install -g typescript
-3. Compila il file TypeScript:
-   tsc script.ts
-4. apri il file index.html nel Browser
+CodePen:
+
+- Il progetto è disponibile e visibile direttamente su CodePen.
+- Per visualizzare e testare il progetto, visita il link di CodePen:https://codepen.io/riccardocrupi7/pen/MYgOXPL . Non è necessario fare alcuna configurazione o apertura di file locali, poiché il codice è già pronto per l'esecuzione nell'ambiente CodePen.
+GitHub:
+
+Se desideri visualizzare il codice sorgente e comprendere la struttura del progetto, puoi fare riferimento al repository GitHub pubblico: https://github.com/riccardocru7/SunneeBeachwear .
 
 
 ## Uso
