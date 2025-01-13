@@ -1,11 +1,15 @@
 
+const enum StatoProdotto {
+  DISPONIBILE = "disponibile",
+  ESAURITO = "esaurito"
+}
 
 interface IProdotto {
-  tipo: string; // costume da bagno, pareo, cappello
-  id: string; // ID univoco
+  tipo: string; 
+  id: string; 
   taglia: string;
   colore: string;
-  stato: "disponibile" | "esaurito";
+  stato: StatoProdotto; 
   assegnaCliente(cliente: ICliente): void;
 }
 
@@ -24,17 +28,15 @@ interface IProcessoProduzione {
   aggiungiProdotto(prodotto: IProdotto): void;
 }
 
-
-
 class Prodotto implements IProdotto {
   tipo: string;
   id: string;
   taglia: string;
   colore: string;
-  stato: "disponibile" | "esaurito";
+  stato: StatoProdotto; 
   private clienteAssegnato?: ICliente;
 
-  constructor(tipo: string, id: string, taglia: string, colore: string, stato: "disponibile" | "esaurito") {
+  constructor(tipo: string, id: string, taglia: string, colore: string, stato: StatoProdotto) {
       this.tipo = tipo;
       this.id = id;
       this.taglia = taglia;
@@ -43,9 +45,9 @@ class Prodotto implements IProdotto {
   }
 
   assegnaCliente(cliente: ICliente): void {
-      if (this.stato === "disponibile") {
+      if (this.stato === StatoProdotto.DISPONIBILE) { 
           this.clienteAssegnato = cliente;
-          this.stato = "esaurito";
+          this.stato = StatoProdotto.ESAURITO; 
           console.log(`Il prodotto ${this.id} è stato assegnato a ${cliente.nome} ${cliente.cognome}`);
       } else {
           console.log(`Il prodotto ${this.id} non è disponibile.`);
@@ -88,11 +90,9 @@ class ProcessoProduzione implements IProcessoProduzione {
 }
 
 
-
-
-const costumeRelax = new Prodotto("costume da bagno", "001", "M", "blu", "disponibile");
-const pareoElegante = new Prodotto("pareo", "002", "unica", "rosso", "disponibile");
-const cappelloSolare = new Prodotto("cappello", "003", "unica", "giallo", "disponibile");
+const costumeRelax = new Prodotto("costume da bagno", "001", "M", "blu", StatoProdotto.DISPONIBILE);
+const pareoElegante = new Prodotto("pareo", "002", "unica", "rosso", StatoProdotto.DISPONIBILE);
+const cappelloSolare = new Prodotto("cappello", "003", "unica", "giallo", StatoProdotto.DISPONIBILE);
 
 
 const cliente1 = new Cliente("Luca", "Rossi", "luca.rossi@example.com", "carta di credito");
@@ -113,14 +113,15 @@ container.innerHTML = `
 <h1>Sunnee Beachwear</h1>
 <p>Prodotti disponibili:</p>
 <ul>
-  <li>1. ${costumeRelax.tipo} (${costumeRelax.colore}, ${costumeRelax.taglia})</li>
-  <li>2. ${pareoElegante.tipo} (${pareoElegante.colore}, ${pareoElegante.taglia})</li>
+<li>1. ${costumeRelax.tipo} (${costumeRelax.colore}, ${costumeRelax.taglia})</li>
+<li>2. ${pareoElegante.tipo} (${pareoElegante.colore}, ${pareoElegante.taglia})</li>
 </ul>
 <p>Inserisci il numero del prodotto per ordinarlo:</p>
 <input id="productInput" type="number" />
 <button id="orderButton">Ordina</button>
 <div id="result"></div>
 `;
+
 
 document.getElementById("orderButton")?.addEventListener("click", () => {
   const input = (document.getElementById("productInput") as HTMLInputElement).value;
